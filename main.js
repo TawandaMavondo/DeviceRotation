@@ -3,6 +3,8 @@ let gyroscope = new Gyroscope({ frequency: 60 });
 let x = document.querySelector(".x");
 let y = document.querySelector(".y");
 let z = document.querySelector(".z");
+let rot = document.querySelector(".rot");
+
 let values = []
 rotated = 0.0
 start = false;
@@ -28,10 +30,8 @@ gyroscope.addEventListener('reading', (e) => {
 
 let btn = document.querySelector(".btn");
 
-let btn2 = document.querySelector(".btn2");
 
 btn.addEventListener("click", () => { start = true; startTime = Math.floor(Date.now() / 1000); console.log(startTime) })
-let rot = document.querySelector(".rot");
 
 function calculateRotated() {
     values.map(v => {

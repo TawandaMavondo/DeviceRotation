@@ -15,6 +15,7 @@ gyroscope.addEventListener('reading', (e) => {
     x.textContent = "X: " + gyroscope.x;
     y.textContent = "Y: " + gyroscope.y;
     z.textContent = "Z: " + gyroscope.z;
+    rot.textContent = "Rotated: " + rotated
     if (start) {
         let data = {
             x: radians_to_degrees(gyroscope.x),
@@ -37,7 +38,6 @@ function calculateRotated() {
         if (values < 0) return;
         d = v.x * v.t
         rotated += d;
-        rot.textContent = "Rotated: " + rotated
     })
 }
 

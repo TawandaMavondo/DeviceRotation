@@ -20,7 +20,7 @@ gyroscope.addEventListener('reading', (e) => {
     rot.textContent = "Rotated: " + rotated
     if (start) {
         let data = {
-            x: radians_to_degrees(gyroscope.x),
+            y: radians_to_degrees(gyroscope.x),
             t: Math.floor(Date.now() / 1000) - startTime
         }
         values.push(data)
@@ -36,7 +36,7 @@ btn.addEventListener("click", () => { start = true; startTime = Math.floor(Date.
 function calculateRotated() {
     values.map(v => {
         if (values < 0) return;
-        d = v.x * v.t
+        d = v.y * v.t
         rotated += d;
     })
 }

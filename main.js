@@ -26,6 +26,7 @@ gyroscope.addEventListener('reading', (e) => {
 });
 
 let btn = document.querySelector(".btn");
+
 let btn2 = document.querySelector(".btn2");
 
 btn.addEventListener("click", () => { start = true; startTime = Math.floor(Date.now() / 1000); console.log(startTime) })

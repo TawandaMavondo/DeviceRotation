@@ -22,7 +22,7 @@ gyroscope.addEventListener('reading', (e) => {
         }
         values.push(data)
     }
-
+    calculateRotated()
 });
 
 let btn = document.querySelector(".btn");

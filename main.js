@@ -30,7 +30,7 @@ let btn = document.querySelector(".btn");
 let btn2 = document.querySelector(".btn2");
 
 btn.addEventListener("click", () => { start = true; startTime = Math.floor(Date.now() / 1000); console.log(startTime) })
-let rot = document.querySelector("rot");
+let rot = document.querySelector(".rot");
 
 function calculateRotated() {
     values.map(v => {

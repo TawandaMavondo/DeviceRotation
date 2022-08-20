@@ -93,7 +93,7 @@ function handler(e) {
             compasV.textContent = "Rotated: " + rotated
             prevCompass = compass;
         }
-        if (compass < 2 && compass > 357) prevCompass = 0;
+        if (prevCompass < 2 && prevCompass > 357) prevCompass = 0;
 
         if (rotated >= 350) {
             hasStarted = false;

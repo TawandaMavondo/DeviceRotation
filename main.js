@@ -49,7 +49,6 @@ const startBtn = document.querySelector(".start-btn");
 let rotated = 0;
 let hasStarted = false;
 let prevCompass = 0;
-let passedNorth = false
 
 const isIOS =
     navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
@@ -86,21 +85,15 @@ function handler(e) {
 
     if (hasStarted) {
         if (prevCompass == 0) prevCompass = compass;
-        if (compass > prevCompass) {
+        if (compass >= prevCompass) {
             rotated += compass - prevCompass
             compasV.textContent = "Rotated: " + rotated
             prevCompass = compass;
         }
-        if (compass == 0) prevCompass = 0;
-        // if (passedNorth) {
-        //     rotated += prevCompass - compass;
-        //     compasV.textContent = "Rotated: " + rotated
-        //     prevCompass = compass;
+        if (compass < 2 && compass > 357) prevCompass = 0;
 
-        // }
         if (rotated >= 350) {
             hasStarted = false;
-            passedNorth = false
             alert("Rotated 360 deg");
         }
     }

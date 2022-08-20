@@ -37,8 +37,8 @@ let prev = document.querySelector(".prev");
 
 function handler(e) {
     let compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-    // comp.textContent = "Compass: " + compass;
-    // prev.textContent = "Prev: " + prevCompass;
+    comp.textContent = "Compass: " + compass;
+    prev.textContent = "Prev: " + prevCompass;
     if (hasStarted) {
         if (prevCompass == 0 || compass == 360) prevCompass = compass;
 

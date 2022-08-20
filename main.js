@@ -79,10 +79,11 @@ function startCompass() {
 }
 
 let compasV = document.querySelector(".compass-v");
+let comp = document.querySelector(".comp");
 
 function handler(e) {
     let compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-
+    comp.textContent = "Compass: " + compass;
     if (hasStarted) {
         if (prevCompass == 0) prevCompass = compass;
         if (compass >= prevCompass) {

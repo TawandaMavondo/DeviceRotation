@@ -39,7 +39,7 @@ function handler(e) {
     let compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
     comp.textContent = "Compass: " + compass;
     prev.textContent = "Prev: " + prevCompass;
-    if (hasStarted && !passedNorth) {
+    if (hasStarted && passedNorth == false) {
         if (prevCompass == 0 || compass == 360) prevCompass = compass;
         if (compass == 360 || compass == 0) passedNorth = true
         if (compass >= prevCompass) {
@@ -51,7 +51,7 @@ function handler(e) {
     } else {
         rotated += compass;
     }
-    
+
     if (rotated >= 350) {
         hasStarted = false;
         alert("Rotated 360 deg");

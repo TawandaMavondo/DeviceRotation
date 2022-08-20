@@ -49,6 +49,7 @@ function handler(e) {
         }
 
     } //
+    console.log(passedNorth);
 
     if (rotated >= 350) {
         hasStarted = false;

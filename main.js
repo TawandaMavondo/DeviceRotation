@@ -1,50 +1,3 @@
-// let gyroscope = new Gyroscope({ frequency: 60 });
-
-// let x = document.querySelector(".x");
-// let y = document.querySelector(".y");
-// let z = document.querySelector(".z");
-// let rot = document.querySelector(".rot");
-
-// let values = []
-// rotated = 0.0
-// start = false;
-// startTime = 0
-
-// function radians_to_degrees(radians) {
-//     return radians * (180 / Math.PI);
-// }
-// gyroscope.addEventListener('reading', (e) => {
-//     x.textContent = "X: " + gyroscope.x;
-//     y.textContent = "Y: " + gyroscope.y;
-//     z.textContent = "Z: " + gyroscope.z;
-//     rot.textContent = "Rotated: " + rotated
-//     if (start) {
-//         let data = {
-//             y: radians_to_degrees(gyroscope.x),
-//             t: Math.floor(Date.now() / 1000) - startTime
-//         }
-//         values.push(data)
-//     }
-//     calculateRotated()
-// });
-
-// let btn = document.querySelector(".btn");
-
-
-// btn.addEventListener("click", () => { start = true; startTime = Math.floor(Date.now() / 1000); console.log(startTime) })
-
-// function calculateRotated() {
-//     values.map(v => {
-//         if (values < 0) return;
-//         d = v.y * v.t
-//         rotated += d;
-//     })
-// }
-
-// gyroscope.start();
-
-
-
 const startBtn = document.querySelector(".start-btn");
 let rotated = 0;
 let hasStarted = false;
@@ -87,13 +40,13 @@ function handler(e) {
     // comp.textContent = "Compass: " + compass;
     // prev.textContent = "Prev: " + prevCompass;
     if (hasStarted) {
-        if (prevCompass == 0 || (compass < 2 && compass > 357)) prevCompass = compass;
+        if (prevCompass == 0 || compass == 360) prevCompass = compass;
+
         if (compass >= prevCompass) {
             rotated += compass - prevCompass
-            compasV.textContent = "Rotated: " + rotated
+            compasV.textContent = "Rotated: " + rotated.toFixed(1)
             prevCompass = compass;
         }
-
         if (rotated >= 350) {
             hasStarted = false;
             alert("Rotated 360 deg");

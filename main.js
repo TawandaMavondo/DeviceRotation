@@ -48,9 +48,7 @@ function handler(e) {
             prevCompass = compass;
         }
 
-    } else {
-        rotated += compass;
-    }
+    } //
 
     if (rotated >= 350) {
         hasStarted = false;

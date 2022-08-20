@@ -87,13 +87,12 @@ function handler(e) {
     comp.textContent = "Compass: " + compass;
     prev.textContent = "Prev: " + prevCompass;
     if (hasStarted) {
-        if (prevCompass == 0) prevCompass = compass;
+        if (prevCompass == 0 || (prevCompass < 2 && prevCompass > 357)) prevCompass = compass;
         if (compass >= prevCompass) {
             rotated += compass - prevCompass
             compasV.textContent = "Rotated: " + rotated
             prevCompass = compass;
         }
-        if (prevCompass < 2 && prevCompass > 357) prevCompass = 0;
 
         if (rotated >= 350) {
             hasStarted = false;

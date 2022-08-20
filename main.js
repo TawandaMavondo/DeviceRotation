@@ -84,10 +84,10 @@ let prev = document.querySelector(".prev");
 
 function handler(e) {
     let compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-    comp.textContent = "Compass: " + compass;
-    prev.textContent = "Prev: " + prevCompass;
+    // comp.textContent = "Compass: " + compass;
+    // prev.textContent = "Prev: " + prevCompass;
     if (hasStarted) {
-        if (prevCompass == 0 || (prevCompass < 2 && prevCompass > 357)) prevCompass = compass;
+        if (prevCompass == 0 || (compass < 2 && compass > 357)) prevCompass = compass;
         if (compass >= prevCompass) {
             rotated += compass - prevCompass
             compasV.textContent = "Rotated: " + rotated

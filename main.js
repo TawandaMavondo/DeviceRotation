@@ -65,6 +65,7 @@ function computePrevCompas(compass) {
     if (compass >= 0 && compass <= 1.5) {
         return campass;
     }
+    return prevCompass
 }
 
 init();

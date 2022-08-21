@@ -34,13 +34,12 @@ function startCompass() {
 let compasV = document.querySelector(".compass-v");
 let comp = document.querySelector(".comp");
 let prev = document.querySelector(".prev");
-let t = document.querySelector(".t");
 
 
 function handler(e) {
     let compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-    comp.textContent = "Compass: " + compass;
-    prev.textContent = "Prev: " + prevCompass;
+    // comp.textContent = "Compass: " + compass;
+    // prev.textContent = "Prev: " + prevCompass;
     if (hasStarted && passedNorth == false) {
         if (prevCompass == 0 || compass == 360) prevCompass = compass;
         if (compass > prevCompass) {
@@ -50,7 +49,7 @@ function handler(e) {
         } else if (compass < prevCompass) {
             prevCompass = compass;
         }
-        if (rotated >= 350) {
+        if (rotated >= 360) {
             hasStarted = false;
             alert("Rotated 360 deg");
         }

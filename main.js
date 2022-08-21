@@ -34,6 +34,8 @@ function startCompass() {
 let compasV = document.querySelector(".compass-v");
 let comp = document.querySelector(".comp");
 let prev = document.querySelector(".prev");
+let t = document.querySelector(".t");
+
 
 function handler(e) {
     let compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
@@ -46,8 +48,8 @@ function handler(e) {
             compasV.textContent = "Rotated: " + rotated.toFixed(1)
             prevCompass = compass;
         } else {
-            rotated += compass;
-            compasV.textContent = "Rotated: " + rotated.toFixed(1)
+            // rotated += compass;
+            t.textContent = "Else: " + true;
         }
         if (rotated >= 350) {
             hasStarted = false;

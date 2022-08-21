@@ -62,7 +62,7 @@ function handler(e) {
 }
 
 function computePrevCompas(compass) {
-    if (compass >= 0 && compass =< 1.5) {
+    if (compass >= 0 && compass <= 1.5) {
         return campass;
     }
 }

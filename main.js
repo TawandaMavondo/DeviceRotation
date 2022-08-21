@@ -46,16 +46,23 @@ function handler(e) {
             rotated += compass - prevCompass
             compasV.textContent = "Rotated: " + rotated.toFixed(1)
             prevCompass = compass;
+        } else {
+            rotated += compass;
+            compasV.textContent = "Rotated: " + rotated.toFixed(1)
         }
 
     } //
-    console.log(passedNorth);
-
     if (rotated >= 350) {
         hasStarted = false;
         alert("Rotated 360 deg");
     }
 
+}
+
+function computePrevCompas(compass) {
+    if (compass > 355 && compass < 2) {
+        return
+    }
 }
 
 init();

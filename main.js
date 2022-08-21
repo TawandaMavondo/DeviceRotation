@@ -47,8 +47,7 @@ function handler(e) {
             compasV.textContent = "Rotated: " + rotated.toFixed(1)
             prevCompass = compass;
         } else if (compass < prevCompass) {
-            prevCompass = computePrevCompas(compass);
-            if (compass >= prevCompass) {
+            if (compass == prevCompass) {
                 prevCompass = compass;
             }
         }

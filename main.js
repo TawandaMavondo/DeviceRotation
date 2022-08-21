@@ -41,7 +41,7 @@ function handler(e) {
     prev.textContent = "Prev: " + prevCompass;
     if (hasStarted && passedNorth == false) {
         if (prevCompass == 0 || compass == 360) prevCompass = compass;
-        if (compass >= prevCompass) {
+        if (compass > prevCompass) {
             rotated += compass - prevCompass
             compasV.textContent = "Rotated: " + rotated.toFixed(1)
             prevCompass = compass;

@@ -41,7 +41,6 @@ function handler(e) {
     prev.textContent = "Prev: " + prevCompass;
     if (hasStarted && passedNorth == false) {
         if (prevCompass == 0 || compass == 360) prevCompass = compass;
-        if (compass == 360 || compass == 0) passedNorth = true
         if (compass >= prevCompass) {
             rotated += compass - prevCompass
             compasV.textContent = "Rotated: " + rotated.toFixed(1)
@@ -50,12 +49,12 @@ function handler(e) {
             rotated += compass;
             compasV.textContent = "Rotated: " + rotated.toFixed(1)
         }
-
+        if (rotated >= 350) {
+            hasStarted = false;
+            alert("Rotated 360 deg");
+        }
     } //
-    if (rotated >= 350) {
-        hasStarted = false;
-        alert("Rotated 360 deg");
-    }
+
 
 }
 

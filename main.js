@@ -46,9 +46,8 @@ function handler(e) {
             rotated += compass - prevCompass
             compasV.textContent = "Rotated: " + rotated.toFixed(1)
             prevCompass = compass;
-        } else if (compass < prevCompass) {
+        } else if (compass < prevCompass && (compass >= 0 && compass <= 90)) {
             prevCompass = compass;
-
         }
         if (rotated >= 360) {
             hasStarted = false;
